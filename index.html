@@ -2,113 +2,679 @@
 <html class="dark scroll-smooth" lang="id">
 <head>
     <meta charset="utf-8"/>
-    <!-- Viewport dioptimalkan untuk mobile -->
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>CV ASN - Memet Hariyadi Christian, S.T</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary": "#a2e094",
-              "primary-deep": "#1f4a18",
-              "surface-card": "#131713",
-              "surface-bg": "#090b09",
-              "accent-border": "#283026"
+                    "primary": "#a2e094",
+                    "primary-deep": "#1f4a18",
+                    "surface-card": "#131713",
+                    "surface-bg": "#090b09",
+                    "accent-border": "#283026",
+                    "text-muted": "#9cb099"
+            },
+            fontFamily: {
+                    sans: ["Plus Jakarta Sans", "sans-serif"],
+                    mono: ["JetBrains Mono", "monospace"]
             }
-          }
-        }
+          },
+        },
       }
     </script>
     <style>
-        body { background-color: #090b09; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-mobile { background: rgba(19, 23, 19, 0.8); backdrop-filter: blur(20px); }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        body { 
+            background: radial-gradient(circle at 50% 0%, #152213 0%, #090b09 70%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glass-header {
+            background: rgba(15, 18, 15, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #090b09;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #283026;
+            border-radius: 99px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a2e094;
+        }
     </style>
 </head>
-<body class="text-gray-200">
+<body class="text-gray-200 selection:bg-primary-deep selection:text-primary pb-20 md:pb-0 min-h-screen flex flex-col antialiased">
 
-<!-- Header Minimalis -->
-<header class="glass-mobile fixed top-0 w-full z-50 border-b border-accent-border px-4 py-3 flex justify-between items-center">
-    <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-            <span class="text-primary material-symbols-outlined text-sm">badge</span>
+<!-- TopAppBar / Header -->
+<header class="glass-header border-b border-accent-border/60 flex justify-between items-center w-full px-6 md:px-12 py-4 sticky top-0 z-50">
+    <div class="flex items-center gap-4">
+        <div class="p-1.5 bg-neutral-900/40 rounded-xl border border-accent-border">
+            <img alt="Logo Pemkot Palangka Raya" class="h-9 w-auto brightness-110" src="https://lh3.googleusercontent.com/d/1W5_V9UkUNzWRx5rDO2qmBS479Vno_FqA"/>
         </div>
-        <span class="text-[10px] font-bold tracking-widest text-primary uppercase">DRH DIGITAL</span>
+        <div class="h-6 w-[1px] bg-accent-border"></div>
+        <h1 class="text-xs md:text-sm font-bold tracking-widest text-primary uppercase font-mono">CV ASN</h1>
     </div>
-    <button onclick="window.print()" class="text-xs font-semibold text-gray-400 bg-surface-card px-3 py-1.5 rounded-lg border border-accent-border">PDF</button>
+
 </header>
 
-<!-- Main Container -->
-<main class="pt-20 px-4 pb-24 space-y-6">
-
-    <!-- Hero Card Mobile -->
-    <div class="bg-surface-card rounded-2xl p-5 border border-accent-border shadow-xl">
-        <div class="flex gap-4 items-center">
-            <div class="w-20 h-24 rounded-lg overflow-hidden border border-accent-border">
-                <img src="https://lh3.googleusercontent.com/d/1nEoFOq5H6eD-P-2iFeB42DXCdLlShQ5X" class="w-full h-full object-cover"/>
-            </div>
-            <div class="flex-1">
-                <h2 class="text-sm font-bold text-white leading-tight">Memet Hariyadi Christian, S.T</h2>
-                <p class="text-[10px] text-primary mt-1 font-mono">Penata Kelola Sistem & TI</p>
-                <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="text-[9px] bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20">III/a</span>
-                    <span class="text-[9px] bg-white/5 text-gray-400 px-2 py-0.5 rounded border border-white/5">NIP Aktif</span>
+<div class="flex flex-1">
+    <!-- Main Content Canvas -->
+    <main class="flex-1 p-4 md:p-12">
+        <div class="max-w-4xl mx-auto space-y-8 md:space-y-12 pb-16">
+            
+            <!-- Profile Header Card -->
+            <div class="bg-surface-card border border-accent-border/80 p-6 md:p-8 rounded-2xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="md:col-span-8 space-y-5 order-2 md:order-1">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-1 bg-primary/10 border border-primary/20 text-primary rounded-lg text-[10px] font-bold uppercase tracking-widest">Status: Aktif</span>
+                        <span class="px-2.5 py-1 bg-white/5 border border-white/10 text-gray-300 rounded-lg text-[10px] font-bold uppercase tracking-widest">Gol: III/a - Penata Muda</span>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-none">Memet Hariyadi Christian, S.T</h2>
+                        <p class="text-primary font-medium text-xs md:text-sm font-mono mt-2 tracking-wide">Penata Kelola Sistem dan Teknologi Informasi</p>
+                    </div>
+                    <div class="h-[1px] bg-accent-border/50"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-text-muted">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">badge</span>
+                            <span class="font-mono text-xs">NIP. 199701272025041001</span>
+                        </div>
+						<div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">account_balance</span>
+                            <span class="text-xs">Pemkot Palangka Raya</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-4 flex justify-center md:justify-end order-1 md:order-2">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-b from-primary to-primary-deep rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                        <div class="w-32 h-44 md:w-36 md:h-48 rounded-xl border border-accent-border p-1.5 shadow-2xl bg-black relative overflow-hidden">
+                            <img class="w-full h-full object-cover rounded-lg" alt="Foto Resmi ASN" src="https://lh3.googleusercontent.com/d/1nEoFOq5H6eD-P-2iFeB42DXCdLlShQ5X"/>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Section 1: Data Perorangan -->
+            <section class="space-y-4 scroll-mt-24" id="data-pribadi">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">person</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">I. Identitas Diri</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-surface-card/60 border border-accent-border/60 p-5 rounded-xl space-y-3 shadow-md">
+                        <div class="flex justify-between items-center border-b border-accent-border/30 pb-2.5">
+                            <span class="text-xs font-medium text-text-muted">Tempat, Tgl Lahir</span>
+                            <span class="text-xs font-semibold text-white">Katingan, 27 Januari 1997</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-accent-border/30 pb-2.5">
+                            <span class="text-xs font-medium text-text-muted">Jenis Kelamin</span>
+                            <span class="text-xs font-semibold text-white">Laki-laki</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-accent-border/30 pb-2.5">
+                            <span class="text-xs font-medium text-text-muted">Agama</span>
+                            <span class="text-xs font-semibold text-white">Kristen</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-text-muted">Status Pernikahan</span>
+                            <span class="text-xs font-semibold text-white">Kawin</span>
+                        </div>
+                    </div>
+                    <div class="bg-surface-card/60 border border-accent-border/60 p-5 rounded-xl space-y-3 shadow-md">
+                        <div class="flex justify-between items-start border-b border-accent-border/30 pb-2.5">
+                            <span class="text-xs font-medium text-text-muted shrink-0">Alamat</span>
+                            <span class="text-xs font-semibold text-white text-right max-w-[200px] leading-relaxed">Jl. Anggur No. 9A RT. 018, Kel. Kasongan Lama</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-accent-border/30 pb-2.5">
+                            <span class="text-xs font-medium text-text-muted">Kontak</span>
+                            <span class="text-xs font-mono text-primary font-medium">memethrd@gmail.com</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-text-muted">Karakteristik Fisik</span>
+                            <span class="text-xs font-semibold text-white">167 cm / 50 kg / Dayak</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Riwayat Pendidikan -->
+            <section class="space-y-4 scroll-mt-24" id="pendidikan">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">school</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">II. Pendidikan Umum</h3>
+                </div>
+                <div class="overflow-x-auto border border-accent-border rounded-xl bg-surface-card/40 custom-scrollbar">
+                    <table class="w-full text-left border-collapse min-w-[600px]">
+                        <thead>
+                            <tr class="bg-surface-card border-b border-accent-border text-text-muted">
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider w-24">Jenjang</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider">Instansi Pendidikan</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider">Program Studi</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider text-center w-32">Lulus</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-accent-border/40 text-xs">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="p-4"><span class="px-2 py-0.5 bg-primary/10 border border-primary/20 text-primary font-mono text-[10px] font-bold rounded">S-1</span></td>
+                                <td class="p-4 font-semibold text-white">Universitas Palangkaraya</td>
+                                <td class="p-4 text-gray-300">Teknik Informatika</td>
+                                <td class="p-4 text-center font-mono font-medium text-primary">2018</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="p-4"><span class="px-2 py-0.5 bg-white/5 border border-white/10 text-gray-400 font-mono text-[10px] rounded">SLTA</span></td>
+                                <td class="p-4 text-gray-300">SMAN 1 Pulau Malan</td>
+                                <td class="p-4 text-gray-400">IPA</td>
+                                <td class="p-4 text-center font-mono text-gray-400">2014</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="p-4"><span class="px-2 py-0.5 bg-white/5 border border-white/10 text-gray-400 font-mono text-[10px] rounded">SLTP</span></td>
+                                <td class="p-4 text-gray-300">SMPN 1 Pulau Malan</td>
+                                <td class="p-4 text-gray-500">-</td>
+                                <td class="p-4 text-center font-mono text-gray-400">2011</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="p-4"><span class="px-2 py-0.5 bg-white/5 border border-white/10 text-gray-400 font-mono text-[10px] rounded">SD</span></td>
+                                <td class="p-4 text-gray-300">SDN Kuluk Bali</td>
+                                <td class="p-4 text-gray-500">-</td>
+                                <td class="p-4 text-center font-mono text-gray-400">2008</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 3: Riwayat Jabatan ASN -->
+            <section class="space-y-4 scroll-mt-24" id="riwayat-jabatan">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">work</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">III. Jabatan Struktural / Fungsional ASN</h3>
+                </div>
+                <div class="bg-surface-card border border-accent-border rounded-xl p-5 relative overflow-hidden shadow-md">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-3">
+                                <h4 class="text-sm font-bold text-white">Penata Kelola Sistem dan Teknologi Informasi</h4>
+                                <span class="px-1.5 py-0.5 text-[9px] bg-primary-deep text-primary border border-primary/30 font-mono font-bold rounded">AKTIF</span>
+                            </div>
+                            <p class="text-xs text-text-muted">Unit: Pemerintah Kota Palangka Raya</p>
+                        </div>
+                        <div class="text-left sm:text-right shrink-0">
+                            <span class="block text-xs font-mono text-primary font-medium">01 April 2025 - Sekarang</span>
+                            <span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">TMT Jabatan</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Riwayat Pengalaman Kerja Non-ASN -->
+            <section class="space-y-4 scroll-mt-24" id="pengalaman-kerja">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">history</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">IV. Rekam Jejak Profesional (Non-ASN)</h3>
+                </div>
+                <div class="overflow-x-auto border border-accent-border rounded-xl bg-surface-card/40 custom-scrollbar">
+                    <table class="w-full text-left border-collapse min-w-[650px]">
+                        <thead>
+                            <tr class="bg-surface-card border-b border-accent-border text-text-muted">
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider w-12 text-center">No</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider">Posisi / Jabatan</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider">Korporasi / Instansi</th>
+                                <th class="p-4 text-[11px] font-bold uppercase tracking-wider w-52">Masa Bakti</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-accent-border/40 text-xs">
+                            <tr class="hover:bg-white/[0.01] transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-mono">01</td>
+                                <td class="p-4"><span class="font-bold text-white block">Junior Associate Mantri</span><span class="text-[11px] text-primary">BRI Unit Bahaur</span></td>
+                                <td class="p-4 text-gray-300">PT. Bank Rakyat Indonesia (Persero) Tbk.<br><span class="text-[11px] text-gray-500">KC Kuala Kapuas</span></td>
+                                <td class="p-4 font-mono text-gray-400">Juli 2023 - Des 2024</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.01] transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-mono">02</td>
+                                <td class="p-4"><span class="font-bold text-white block">Customer Services</span><span class="text-[11px] text-primary">BRI Unit Tumbang Samba</span></td>
+                                <td class="p-4 text-gray-300">PT. Bank Rakyat Indonesia (Persero) Tbk.<br><span class="text-[11px] text-gray-500">KC Palangka Raya</span></td>
+                                <td class="p-4 font-mono text-gray-400">Feb 2023 - Juni 2023</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.01] transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-mono">03</td>
+                                <td class="p-4"><span class="font-bold text-white block">Customer Services</span><span class="text-[11px] text-primary">BRI Unit Tumbang Talaken</span></td>
+                                <td class="p-4 text-gray-300">PT. Bank Rakyat Indonesia (Persero) Tbk.<br><span class="text-[11px] text-gray-500">KC Palangka Raya</span></td>
+                                <td class="p-4 font-mono text-gray-400">Jan 2022 - Feb 2023</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.01] transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-mono">04</td>
+                                <td class="p-4"><span class="font-bold text-white block">Brilian Internship Program (CS)</span><span class="text-[11px] text-primary">BRI Unit Kereng Pangi</span></td>
+                                <td class="p-4 text-gray-300">PT. Bank Rakyat Indonesia (Persero) Tbk.<br><span class="text-[11px] text-gray-500">KC Palangka Raya</span></td>
+                                <td class="p-4 font-mono text-gray-400">Maret 2020 - Jan 2022</td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.01] transition-colors">
+                                <td class="p-4 text-center text-gray-500 font-mono">05</td>
+                                <td class="p-4"><span class="font-bold text-white block">Laboran Komputer & Tenaga Pendidik</span><span class="text-[11px] text-text-muted">TIK, Sejarah, BK</span></td>
+                                <td class="p-4 text-gray-300">SMA Negeri 1 Pulau Malan</td>
+                                <td class="p-4 font-mono text-gray-400">Juli 2019 - Maret 2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 5: Pendidikan Kedinasan -->
+            <section class="space-y-4 scroll-mt-24" id="diklat-fungsional">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">military_tech</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">V. Diklat Kedinasan & Penjenjangan</h3>
+                </div>
+                <div class="bg-gradient-to-r from-surface-card to-neutral-900/40 border border-accent-border rounded-xl p-5 shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/[0.02] scale-150 pointer-events-none">
+                        <span class="material-symbols-outlined text-9xl">workspace_premium</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div class="space-y-2">
+                            <span class="inline-flex px-2 py-0.5 bg-primary/10 border border-primary/20 text-primary text-[9px] font-mono font-bold rounded">Prajabatan Wajib</span>
+                            <h4 class="text-sm font-bold text-white">Pelatihan Dasar (Latsar) CPNS Angkatan III</h4>
+                            <p class="text-xs text-text-muted">Penyelenggara: Badan Pengembangan Sumber Daya Manusia Provinsi Kalimantan Tengah</p>
+                            <p class="text-[11px] font-mono text-gray-500 mt-1">STTPL: 00004190/LATSAR CPNS III/6700/ • 19 Sep 2025</p>
+                        </div>
+                        <div class="bg-neutral-900/90 border border-accent-border px-4 py-2.5 rounded-lg text-center shrink-0 min-w-[100px]">
+                            <span class="block text-sm font-bold font-mono text-primary">647</span>
+                            <span class="text-[9px] text-gray-500 font-bold uppercase tracking-wider">Total Jam</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Diklat & Kursus Informal (Terbuka Penuh Tanpa Scroll) -->
+            <section class="space-y-4 scroll-mt-24" id="diklat-informal">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">verified</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">VI. Kompetensi Informal / Sertifikasi Teknis</h3>
+                </div>
+                
+                <!-- Grid Full Content (Tanpa max-height & scroll) -->
+                <div class="grid grid-cols-1 gap-3">
+                    
+                    <!-- Item 1 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">1. Pengantar Sistem Pemerintahan Berbasis Elektronik (SPBE)</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Aparatur Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 22998231320-15928/MS/BLSDM.KOMINFO/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">2. Introduction to Cloud Computing</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299864850-13946/MS/BLSDM.Komdigi/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">1 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">3. Sosialisasi Pengembangan Kompetensi IP-ASN Kota Palangka Raya</h4>
+                            <p class="text-[11px] text-text-muted">BKPSDM Kota Palangka Raya</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 893.4/905/BKPSDM.PKA.02/IV/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">4. Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299818850-16337/MS/BLSDM.KOMINFO/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">1 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">5. Ethical Hacker for Dummies</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 22910030850-11580/MS/BLSDM.KOMINFO/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">1 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">6. Pengembangan Kompetensi IP-ASN secara Daring via Zoom</h4>
+                            <p class="text-[11px] text-text-muted">BKPSDM Kota Palangka Raya</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 839.4/905/BKPSDM.PKA.02/IV/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">7. Kebijakan Pelayanan Publik: Tantangan dan Peluang di Era Digital</h4>
+                            <p class="text-[11px] text-text-muted">Lembaga Administrasi Negara</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2990/P.3/KD1.02</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">8. Audit Sistem Kearsipan Internal Pemkot Palangka Raya 2025</h4>
+                            <p class="text-[11px] text-text-muted">Dinas Perpustakaan dan Kearsipan Kota Palangka Raya</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 895.3/0561/BANGKOM-ASN/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">9. Fundamental AI - DEX - Huawei - NDTA DTS 2026</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Talenta Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 21212611840-67/DTA/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">19 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 10 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">10. Cloud Essentials CA - DEX - AWS - NDTA DTS 2026</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Talenta Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 21212374840-445/DTA/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">8 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 11 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">11. Associate Data Scientist + Python - NDTA DTS 2026</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Talenta Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 21211993840-6295/DTA/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">31 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 12 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">12. Penyelamatan dan Penanganan Arsip Terdampak Bencana</h4>
+                            <p class="text-[11px] text-text-muted">Arsip Nasional Republik Indonesia</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: KN.02.041//2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">4 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 13 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">13. Introduction to Cyber Security and Career Awareness</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299734850-23716/MS/BLSDM.Komdigi/2025</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">1 Jam / 2025</span>
+                    </div>
+
+                    <!-- Item 14 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">14. Konsep Pemrograman</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299793850-11866/MS/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 15 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">15. Pengenalan Internet of Things: Konsep, Teknologi, dan Aplikasi</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299806850-4131/MS/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">1 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 16 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">16. Membangun Lab Virtual & Dasar Linux</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299809850-2586/MS/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 17 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">17. Peran Strategis SDM ASN dalam Transformasi SPBE 2026</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: SUHU-26012307</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 18 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">18. Manajemen ASN: Implementasi Meritokrasi & Manajemen Talenta</h4>
+                            <p class="text-[11px] text-text-muted">Lembaga Administrasi Negara</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2662/P.3/KDI/922</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 19 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">19. Pembinaan Tata Kelola Data Sektoral Tingkat Kecamatan</h4>
+                            <p class="text-[11px] text-text-muted">Badan Pusat Statistik Kota Palangka Raya</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: B76-/62710/ES.000/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">4 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 20 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">20. Adaptive Public Leadership</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 1822/Dep.5DPP.APWI-/II/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">4 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 21 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">21. Transformasi Pelayanan Publik Digital</h4>
+                            <p class="text-[11px] text-text-muted">BPSDM Provinsi Kaltim & Pusjar SKPP LAN RI</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 000.7.5.6 03664-2026_BPSDM-III</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">4 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 22 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">22. Penguatan Meritokrasi Instansi Pemerintah (ASN Corporate University)</h4>
+                            <p class="text-[11px] text-text-muted">ASN Corporate University bersama PPID by SUHU</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: SUHU-26023306</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 23 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">23. Relaksasi Rekognisi Pembelajaran Lampau (RPL)</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pembelajaran dan Strategi Kebijakan Pelayanan Publik-LAN</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 13290/P.3/KDI.02/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 24 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">24. Statistik Sektoral 2026: Era Satu Data & AI</h4>
+                            <p class="text-[11px] text-text-muted">PPID by SUHU</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: SUHU-26057075</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 25 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">25. Kompetensi dan Integritas ASN: Fondasi Utama Smart Governance</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pembelajaran dan Strategi Kebijakan Pelayanan Publik-LAN</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 38544/P.3/KDI.02/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">4 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 26 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">26. Webinar Statistik Sektoral 2026 (Evidence Based)</h4>
+                            <p class="text-[11px] text-text-muted">PPID by SUHU</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: SUHU-26057075</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 27 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">27. Peran ASN Dalam Membangun Citra Lembaga Melalui Konten Kreatif</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299828850-10202/MS/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 28 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">28. AI untuk Debottlenecking Perizinan Berusaha GTA DTS 2026</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 199126001320-/GTA/BLSDM.Komdigi2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">3 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 29 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">29. Pengantar Mindset Digital 1: Mengubah Masa Depan</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 2299815850-24860/MS/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">2 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 30 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">30. Fundamental of Associate Network Administrator</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 21212087840-8345/DTA/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">12 Jam / 2026</span>
+                    </div>
+
+                    <!-- Item 31 -->
+                    <div class="bg-surface-card/60 border border-accent-border/50 p-4 rounded-xl flex justify-between items-start gap-4 hover:border-accent-border transition-all">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-white">31. Intermediate Associate Network Administrator</h4>
+                            <p class="text-[11px] text-text-muted">Pusat Pengembangan Literasi Digital Komdigi</p>
+                            <p class="text-[10px] font-mono text-gray-500">No: 21212088840-2153/DTA/BLSDM.Komdigi/2026</p>
+                        </div>
+                        <span class="shrink-0 text-[10px] font-mono bg-neutral-900 px-2 py-1 border border-accent-border rounded text-primary">12 Jam / 2026</span>
+                    </div>
+
+                </div>
+                <p class="text-[10px] text-gray-500 font-mono italic text-right px-2">*Sinkronisasi otomatis riwayat sertifikasi kompetensi teknis terverifikasi.</p>
+            </section>
+
+            <!-- Section 7: Penghargaan -->
+            <section class="space-y-4 scroll-mt-24" id="prestasi">
+                <div class="flex items-center gap-3 border-b border-accent-border pb-3">
+                    <span class="material-symbols-outlined text-primary text-xl">workspace_premium</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-primary font-mono">VII. Apresiasi & Penghargaan</h3>
+                </div>
+                <div class="bg-surface-card/70 border border-accent-border p-5 rounded-xl flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center">
+                            <span class="material-symbols-outlined">military_tech</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Juara 1 Olimpiade Sains Bidang Komputer (Tingkat SMA)</h4>
+                            <p class="text-[11px] text-text-muted">Cakupan Wilayah: Kabupaten Katingan</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-primary bg-primary-deep/50 px-2.5 py-1 rounded border border-primary/20">2013</span>
+                </div>
+            </section>
+
         </div>
+    </main>
+</div>
+
+<!-- Sticky Mobile Navigation Box -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 glass-header border-t border-accent-border/80 px-4 py-2.5 flex justify-around z-50 shadow-2xl">
+    <a href="#data-pribadi" class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors text-[10px] font-medium font-mono">
+        <span class="material-symbols-outlined text-lg mb-0.5">person</span>Profil
+    </a>
+    <a href="#riwayat-jabatan" class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors text-[10px] font-medium font-mono">
+        <span class="material-symbols-outlined text-lg mb-0.5">badge</span>Jabatan
+    </a>
+    <a href="#pengalaman-kerja" class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors text-[10px] font-medium font-mono">
+        <span class="material-symbols-outlined text-lg mb-0.5">history</span>Kerja
+    </a>
+    <a href="#diklat-informal" class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors text-[10px] font-medium font-mono">
+        <span class="material-symbols-outlined text-lg mb-0.5">verified</span>Sertifikasi
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-surface-card/80 border-t border-accent-border/60 w-full py-6 flex flex-col sm:flex-row justify-between items-center px-6 md:px-12 gap-4 relative z-40 mb-14 md:mb-0">
+    <div class="text-center sm:text-left space-y-1">
+        <span class="text-[11px] font-bold text-primary tracking-widest font-mono uppercase">SIMPEG CV ASN</span>
+        <p class="text-[10px] text-text-muted">© 2026 Memet Hariyadi Christian, S.T. • Pemkot Palangka Raya.</p>
     </div>
-
-    <!-- Section: Data Utama -->
-    <section class="space-y-3">
-        <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest pl-1">Identitas</h3>
-        <div class="bg-surface-card rounded-xl p-4 border border-accent-border text-[11px] space-y-3">
-            <div class="flex justify-between border-b border-white/5 pb-2">
-                <span class="text-gray-500">Tempat Lahir</span>
-                <span class="text-white">Katingan, 1997</span>
-            </div>
-            <div class="flex justify-between">
-                <span class="text-gray-500">Status</span>
-                <span class="text-white">Kawin</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Pelatihan (Tanpa Scroll - List Rapi) -->
-    <section class="space-y-3">
-        <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest pl-1">Sertifikasi & Pelatihan (31)</h3>
-        <div class="space-y-2">
-            <!-- Contoh Item List Mobile -->
-            <div class="bg-surface-card p-3 rounded-xl border border-accent-border flex gap-3 items-start">
-                <span class="text-primary material-symbols-outlined text-base mt-0.5">verified</span>
-                <div>
-                    <h4 class="text-[11px] font-bold text-white">Associate Data Scientist + Python</h4>
-                    <p class="text-[9px] text-gray-500 mt-0.5">Pusat Pengembangan Talenta Digital Komdigi</p>
-                </div>
-            </div>
-            <!-- Ulangi item di atas untuk 31 data lainnya -->
-            <div class="bg-surface-card p-3 rounded-xl border border-accent-border flex gap-3 items-start">
-                <span class="text-primary material-symbols-outlined text-base mt-0.5">verified</span>
-                <div>
-                    <h4 class="text-[11px] font-bold text-white">Fundamental AI - DTS 2026</h4>
-                    <p class="text-[9px] text-gray-500 mt-0.5">Pusat Pengembangan Talenta Digital Komdigi</p>
-                </div>
-            </div>
-            <!-- Tambahkan sisa item lainnya di sini... -->
-        </div>
-    </section>
-</main>
-
-<!-- Bottom Nav (Mobile Only) -->
-<nav class="fixed bottom-0 w-full glass-mobile border-t border-accent-border py-3 px-6 flex justify-between">
-    <button class="flex flex-col items-center text-primary"><span class="material-symbols-outlined text-xl">person</span><span class="text-[8px] mt-1 font-bold">PROFIL</span></button>
-    <button class="flex flex-col items-center text-gray-500"><span class="material-symbols-outlined text-xl">work</span><span class="text-[8px] mt-1 font-bold">JABATAN</span></button>
-    <button class="flex flex-col items-center text-gray-500"><span class="material-symbols-outlined text-xl">verified</span><span class="text-[8px] mt-1 font-bold">PELATIHAN</span></button>
-</nav>
+    <div class="text-[9px] font-mono text-gray-600">
+        AUTOGENERATED BY COMPUTATION SYSTEM
+    </div>
+</footer>
 
 </body>
 </html>
