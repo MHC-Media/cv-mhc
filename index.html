@@ -109,18 +109,10 @@
                 <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
             </div>
             <div>
-                <span class="text-[10px] font-mono tracking-widest text-primary uppercase font-bold block">Digital ASN CV</span>
+                <span class="text-[10px] font-mono tracking-widest text-primary uppercase font-bold block">Digital CV ASN</span>
                 <h1 class="text-xs lg:text-sm font-extrabold text-white tracking-wide">Pemerintah Kota Palangka Raya</h1>
             </div>
         </div>
-
-        <!-- <div class="flex items-center gap-3">
-            <button onclick="window.print()" class="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-gray-300 hover:text-primary border border-accent-border hover:border-primary/50 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all active:scale-95 shadow-lg">
-                <i data-lucide="printer" class="w-4 h-4"></i>
-                <span class="hidden sm:inline">Cetak Dokumen CV</span>
-            </button>
-        </div> -->
-        
     </header>
 
     <!-- Main Container -->
@@ -152,7 +144,7 @@
                     </div>
 
                     <p class="text-sm text-text-muted leading-relaxed max-w-2xl">
-                        Aparatur Sipil Negara berdedikasi tinggi di bidang transformasi digital pemerintahan, arsitektur SPBE, tata kelola data sektoral, serta pengamanan sistem informasi di lingkungan Pemerintah Kota Palangka Raya.
+                        Aparatur Sipil Negara harus berdedikasi tinggi baik di bidang transformasi digital pemerintahan, arsitektur SPBE, tata kelola data sektoral, serta pengamanan sistem informasi di lingkungan Pemerintah Kota Palangka Raya.
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -195,6 +187,9 @@
             <button onclick="filterSection('all')" id="btn-all" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-primary text-neutral-950 shadow-md shrink-0 flex items-center gap-2">
                 <i data-lucide="layout-grid" class="w-4 h-4"></i> Semua Bagian
             </button>
+            <button onclick="filterSection('portfolio')" id="btn-portfolio" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-surface-card hover:bg-neutral-800 text-gray-300 border border-accent-border shrink-0 flex items-center gap-2">
+                <i data-lucide="terminal" class="w-4 h-4"></i> Portfolio & Karya
+            </button>
             <button onclick="filterSection('pribadi')" id="btn-pribadi" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-surface-card hover:bg-neutral-800 text-gray-300 border border-accent-border shrink-0 flex items-center gap-2">
                 <i data-lucide="user" class="w-4 h-4"></i> Identitas Diri
             </button>
@@ -212,7 +207,7 @@
         <div class="space-y-12">
 
             <!-- Section: Portfolio / Project IT -->
-            <section class="space-y-6 scroll-mt-24" id="portfolio">
+            <section class="cv-section space-y-6 scroll-mt-24" data-category="portfolio" id="section-portfolio">
                 <div class="flex items-center justify-between border-b border-accent-border pb-3">
                     <div class="flex items-center gap-3">
                         <div class="p-2 bg-primary/10 rounded-lg border border-primary/20 text-primary">
@@ -1054,8 +1049,8 @@
     <!-- Footer -->
     <footer class="glass-header mt-16 py-8 px-6 lg:px-16 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="space-y-1">
-            <span class="text-xs font-mono font-bold text-primary uppercase tracking-widest">SIMPEG DIGITAL • MHC</span>
-            <p class="text-[11px] text-text-muted">© 2026 Memet Hariyadi Christian, S.T. • Pemerintah Kota Palangka Raya.</p>
+            <span class="text-xs font-mono font-bold text-primary uppercase tracking-widest">SIMPEG DIGITAL</span>
+            <p class="text-[11px] text-text-muted">Memet Hariyadi Christian, S.T. • Pemerintah Kota Palangka Raya © 2026</p>
         </div>
         <div class="text-[10px] font-mono text-gray-500 flex items-center gap-1.5">
             <i data-lucide="sparkles" class="w-3.5 h-3.5 text-primary"></i> RENDERED WITH LUCIDE & TAILWIND CSS
